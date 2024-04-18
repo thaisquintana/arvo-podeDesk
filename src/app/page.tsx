@@ -1,6 +1,7 @@
-import Card from "@/components/card";
-import Header from "@/components/header";
-import SearchBar from "@/components/searchBar";
+import Header from "./components/header";
+import SearchBar from "./components/searchBar";
+import Card from "./components/card";
+
 
 export default function Home() {
   return (
