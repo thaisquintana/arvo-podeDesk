@@ -1,14 +1,15 @@
 "use client";
 
+import { getPokemonDetails } from "@/app/api/pokeCard/route";
 import { Search } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function SearchBar() {
   const [pokemon, setPokemon] = useState<string>("");
 
   const onSubmit = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
-      console.log(pokemon);
+      history.replaceState({}, '', `?pokemon=${pokemon}`)
     }
   };
   return (
