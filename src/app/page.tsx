@@ -16,7 +16,7 @@ export default function Home({
        <SearchBar />
         {query ? 
         (
-          <Suspense fallback={<p>Carregando ...</p>}>
+          <Suspense fallback={<p className="p-8 max-w-screen-xl mx-auto my-0 flex justify-center">Loading...</p>}>
             <Card query={query} />
         </Suspense>
         )
