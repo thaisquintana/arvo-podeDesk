@@ -1,10 +1,8 @@
 "use client";
 
-import { getPokemonDetails } from "@/app/api/pokeCard/route";
-import { Search } from "lucide-react";
+import { useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import path from "path";
-import { useEffect, useState } from "react";
+import { Search } from "lucide-react";
 
 export default function SearchBar() {
   const searchParams = useSearchParams();
@@ -25,7 +23,7 @@ export default function SearchBar() {
     }
   };
   return (
-    <div className="flex items-center relative">
+    <div className="flex items-center relative max-w-screen-xl mx-auto">
       <input
         type="text"
         placeholder="Search"

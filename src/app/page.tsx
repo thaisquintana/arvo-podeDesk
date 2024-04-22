@@ -1,8 +1,8 @@
+import { Suspense } from "react";
 import Card from "./components/card";
 import Header from "./components/header";
 import SearchBar from "./components/searchBar";
-import SearchPokemon from "./searchPokemon/page";
-
+import { ArrowUpIcon } from "lucide-react";
 export default function Home({
   searchParams,
 }: {
@@ -13,7 +13,20 @@ export default function Home({
     <>
       <Header />
       <main className="p-8 mx-auto my-0">
-        <SearchPokemon query={query} />
+       <SearchBar />
+        {query ? 
+        (
+          <Suspense fallback={<p>Carregando ...</p>}>
+            <Card query={query} />
+        </Suspense>
+        )
+        : (
+          <div className="p-8 mx-auto my-0 w-full flex justify-center items-center flex-col">
+          <ArrowUpIcon className="mt-8" />
+          <p className="mt-8">Type Pokemon's name and click enter to search.</p>
+        </div>
+        )}
+        
       </main>
     </>
   );

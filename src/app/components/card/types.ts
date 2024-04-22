@@ -23,7 +23,7 @@ export interface PokeInfo {
     name: string 
     image: string
     categories: Category
-    stats?: StatisticData
+    stats: StatisticData
 }
 
 export interface TermSearch {
