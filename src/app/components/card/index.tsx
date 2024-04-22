@@ -1,12 +1,12 @@
 import { getPokemonDetails } from "@/app/api/pokeCard/route";
-import { TermSearch } from "./types";
+import { StatisticData, TermSearch } from "./types";
 import { NotResultFound } from "@/lib/exceptions";
 
 export default async function Card({ query }: TermSearch) {
   const pokemon = await getPokemonDetails(query);
 
   if(!pokemon) throw new NotResultFound()
-    
+
   return (
     
     <div className="my-10 p-8 bg-gray-300 rounded-lg shadow max-w-screen-xl mx-auto">
@@ -27,10 +27,7 @@ export default async function Card({ query }: TermSearch) {
         </div>
         <div className="w-full">
           <ul className="grid gap-4 grid-cols-2">
-            {pokemon.stats?.map((status: any) => {
-             
-              console.log(status)
-              
+            {pokemon.stats?.map((status: StatisticData) => {
               return (
                 <li className="flex w-3/12" key={status.stat_name}>
                   <p className="mr-1 font-semibold capitalize">{status.stat_name}:</p>

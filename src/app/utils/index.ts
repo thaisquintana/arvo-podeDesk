@@ -7,8 +7,7 @@ export const flattenObject = (obj: any, prefix = "") =>
     return acc;
   }, {})
 
-  export const reOrderArray = (arr: any, from: number, to: number) => {
-    
+  export const reOrderArray = (arr: [], from: number, to: number) => {
     arr.splice(to, 0, arr.splice(from, 1)[0])
     return arr;
 };

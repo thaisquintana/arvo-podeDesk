@@ -16,7 +16,6 @@ export async function getPokemonDetails(pokemon: string) {
     const status = pokemonDetalis.stats.map((stat: any) => flattenObject(stat))
     const statistics =  reOrderArray(status, 5, 3)
     const statisticsB =  reOrderArray(statistics, 4, 5)
-    console.log(statistics)
     const payload = {
       id: pokemonDetalis.id,
       name: pokemonDetalis.name,
@@ -24,7 +23,6 @@ export async function getPokemonDetails(pokemon: string) {
       categories: types,
       stats: statisticsB,
     };
-    console.log(payload)
     return payload;
   } catch (e: any) {
     console.log("error:", e.message);
