@@ -1,8 +1,8 @@
 export interface StatisticData {
-    base_stat?: number
+    base_stat: number
     effort: number
-    stat_name?: string
-    stat_url?: string
+    stat_name: string
+    stat_url: string
 }
 
 export interface Category {

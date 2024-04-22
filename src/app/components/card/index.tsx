@@ -1,6 +1,5 @@
 import { getPokemonDetails } from "@/app/api/pokeCard/route";
-import { StatisticData, TermSearch } from "./types";
-import { flattenObject } from "@/app/utils";
+import { TermSearch } from "./types";
 import { NotResultFound } from "@/lib/exceptions";
 
 export default async function Card({ query }: TermSearch) {
@@ -28,12 +27,14 @@ export default async function Card({ query }: TermSearch) {
         </div>
         <div className="w-full">
           <ul className="grid gap-4 grid-cols-2">
-            {pokemon.stats?.map((status: StatisticData) => {
-              const statistic = flattenObject(status);
+            {pokemon.stats?.map((status: any) => {
+             
+              console.log(status)
+              
               return (
-                <li className="flex w-3/12" key={statistic?.stat_name}>
-                  <p className="mr-1 font-semibold">{statistic?.stat_name}:</p>
-                  <label>{statistic?.base_stat}</label>
+                <li className="flex w-3/12" key={status.stat_name}>
+                  <p className="mr-1 font-semibold capitalize">{status.stat_name}:</p>
+                  <label>{status.base_stat}</label>
                 </li>
               );
             })}
