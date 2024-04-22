@@ -29,7 +29,7 @@ export default function SearchBar() {
         placeholder="Search"
         className="rounded-lg w-full p-3 border	border-gray-500 bg-transparent text-gray-700 placeholder-gray-700 focus:border-blue-500 focus:bg-gray-200 focus-visible:outline-none lowercase"
         onKeyDown={onSubmit}
-        onChange={(e) => setPokemon(e.target.value)}
+        onChange={(e) => setPokemon(e.target.value.toLowerCase())}
       />
       <Search className="absolute right-4 text-gray-700" />
     </div>
