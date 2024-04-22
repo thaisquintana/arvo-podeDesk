@@ -28,9 +28,11 @@ export default async function Card({ query }: TermSearch) {
         <div className="w-full">
           <ul className="grid gap-4 grid-cols-2">
             {pokemon.stats?.map((status: StatisticData) => {
+              const specialName = status.stat_name.replace('special-', 'SP. ')
+
               return (
                 <li className="flex w-6/12" key={status.stat_name}>
-                  <p className="mr-1 font-semibold capitalize">{status.stat_name}:</p>
+                  <p className="mr-1 font-semibold capitalize">{specialName}:</p>
                   <label>{status.base_stat}</label>
                 </li>
               );
