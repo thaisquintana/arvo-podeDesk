@@ -1,6 +1,7 @@
 import Card from "./components/card";
 import Header from "./components/header";
 import SearchBar from "./components/searchBar";
+import SearchPokemon from "./searchPokemon/page";
 
 export default function Home({
   searchParams,
@@ -12,8 +13,7 @@ export default function Home({
     <>
       <Header />
       <main className="p-8 mx-auto my-0">
-        <SearchBar />
-        <Card query={query} />
+        <SearchPokemon query={query} />
       </main>
     </>
   );
