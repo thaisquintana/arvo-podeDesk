@@ -29,7 +29,7 @@ export default async function Card({ query }: TermSearch) {
           <ul className="grid gap-4 grid-cols-2">
             {pokemon.stats?.map((status: StatisticData) => {
               return (
-                <li className="flex w-3/12" key={status.stat_name}>
+                <li className="flex w-6/12" key={status.stat_name}>
                   <p className="mr-1 font-semibold capitalize">{status.stat_name}:</p>
                   <label>{status.base_stat}</label>
                 </li>
